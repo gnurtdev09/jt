@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * =============== ROOT =============== */
+:root {
+    --font-body: "Roboto", sans-serif;
+    --font-accent: "Roboto Condensed", sans-serif;
+    --font-logo: "Poppins", sans-serif;
+}
+
+/* * =============== BASE =============== */
+/* * ========== BODY ========== */
+body {
+    --background-body: radial-gradient(
+            circle closest-corner at center 50%,
+            hsl(0, 0%, 80%),
+            hsl(0, 0%, 100%) 40%
+        )
+        no-repeat;
+}
+
+body.dark {
+    --background-body: radial-gradient(
+            circle closest-corner at center 50%,
+            #222222,
+            #000000 40%
+        )
+        no-repeat;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background-body);
+    font-family: var(--font-body);
+    @apply font-normal text-base min-h-screen;
+}
+
+/* * ========== TYPOGRAPHY ========== */
+*,
+*::before,
+*::after {
+    @apply text-gray-500 dark:text-gray-300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight);
+    @apply text-gray-900 dark:text-white;
+}
+
+h1 {
+    --font-weight: 900;
+}
+
+h2,
+h3 {
+    --font-weight: 800;
+}
+
+h4,
+h5 {
+    --font-weight: 700;
+}
+
+h6 {
+    --font-weight: 600;
+}
+
+/* * ========== SCROLLBAR ========== */
+*::-webkit-scrollbar {
+    @apply w-[6px];
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--background-body);
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 hover:bg-green-400 rounded-lg cursor-pointer;
+}
+
+/* * =============== UTILITIES =============== */
+.font-body {
+    font-family: var(--font-body);
+}
+
+.font-accent {
+    font-family: var(--font-accent);
+}
+
+.font-logo {
+    font-family: var(--font-logo);
+}
+
+.bg-glass {
+    @apply border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-black/50 backdrop-blur-lg;
+}
