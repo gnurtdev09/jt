@@ -39,16 +39,10 @@ html {
 body {
     background: var(--background-body);
     font-family: var(--font-body);
-    @apply font-normal text-base min-h-screen;
+    @apply font-normal text-base h-screen antialiased text-gray-500 dark:text-gray-300;
 }
 
 /* * ========== TYPOGRAPHY ========== */
-*,
-*::before,
-*::after {
-    @apply text-gray-500 dark:text-gray-300;
-}
-
 h1,
 h2,
 h3,
