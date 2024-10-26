@@ -26,9 +26,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     /**
      * @description State in provider
      */
-    const [theme, setTheme] = useState<ThemeType>(
-        (localStorage.getItem("theme") as ThemeType) || "light"
-    );
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [theme, setTheme] = useState<ThemeType>("light");
 
     /**
      * @description Function to change theme
@@ -55,6 +54,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
         } else {
             setTheme(themeState as ThemeType);
         }
+
+        setIsLoading(false);
     }, []);
 
     useEffect(() => {
@@ -66,7 +67,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     return (
         <ThemeContext.Provider value={{ theme, changeTheme }}>
-            {children}
+            {!isLoading && children}
         </ThemeContext.Provider>
     );
 };

@@ -10,7 +10,9 @@ export default function RootLayout({
         <ThemeProvider>
             <main className="relative h-full overflow-auto">
                 <Header />
-                <section className="px-6 py-3">{children}</section>
+                <section className="max-w-7xl mx-auto px-6 py-3">
+                    {children}
+                </section>
             </main>
         </ThemeProvider>
     );

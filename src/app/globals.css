@@ -12,6 +12,11 @@
 }
 
 /* * =============== BASE =============== */
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
 /* * ========== BODY ========== */
 body {
     --background-body: radial-gradient(
@@ -20,6 +25,7 @@ body {
             hsl(0, 0%, 100%) 40%
         )
         no-repeat;
+    @apply text-gray-500;
 }
 
 body.dark {
@@ -29,17 +35,14 @@ body.dark {
             #000000 40%
         )
         no-repeat;
-}
 
-html {
-    font-size: 100%;
-    scroll-behavior: smooth;
+    @apply text-gray-200;
 }
 
 body {
     background: var(--background-body);
     font-family: var(--font-body);
-    @apply font-normal text-base h-screen antialiased text-gray-500 dark:text-gray-300;
+    @apply font-normal text-base h-screen antialiased;
 }
 
 /* * ========== TYPOGRAPHY ========== */
@@ -69,6 +72,10 @@ h5 {
 
 h6 {
     --font-weight: 600;
+}
+
+a {
+    color: inherit;
 }
 
 /* * ========== SCROLLBAR ========== */
